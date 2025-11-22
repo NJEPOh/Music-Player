@@ -1,20 +1,28 @@
-/* ===========
-   Basic interactions: play/pause, tabs, render list, nav active
-   =========== */
-
+/* ============================================
+   PLAY / PAUSE INTERACTION
+   ============================================ */
 const playBtn = document.getElementById('playBtn');
 let isPlaying = false;
 
 if (playBtn) {
     playBtn.addEventListener('click', () => {
         isPlaying = !isPlaying;
+
         const img = playBtn.querySelector('img');
         playBtn.setAttribute('aria-pressed', String(isPlaying));
-        if (img) img.src = isPlaying ? 'images/Player/pause.png' : 'images/Player/play.png';
+
+        if (img) {
+            img.src = isPlaying
+                ? 'images/Player/pause.png'
+                : 'images/Player/play.png';
+        }
     });
 }
 
-/* ===== DATA LAGU ===== */
+/* ============================================
+   MUSIC DATA
+   - Contains arrays for recommended, popular, new
+   ============================================ */
 const musicData = {
     recommended: [
         { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40" },
@@ -30,6 +38,7 @@ const musicData = {
         { img: "images/We Are.png", title: "We Are", duration: "2:36" },
         { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50" }
     ],
+
     popular: [
         { img: "images/We Are.png", title: "We Are", duration: "2:36" },
         { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56" },
@@ -44,6 +53,7 @@ const musicData = {
         { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32" },
         { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56" }
     ],
+
     new: [
         { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32" },
         { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56" },
@@ -60,78 +70,102 @@ const musicData = {
     ]
 };
 
-/* ===== RENDER LIST ===== */
+/* ============================================
+   RENDER LIST
+   - Generates <li> elements based on selected tab
+   ============================================ */
 function renderList(type) {
     const list = document.getElementById('musicList');
     if (!list) return;
+
     list.innerHTML = '';
-    const arr = musicData[type] || [];
-    arr.forEach(music => {
+
+    const items = musicData[type] || [];
+
+    items.forEach(music => {
         const li = document.createElement('li');
+
         li.innerHTML = `
-      <div style="display:flex;align-items:center;gap:12px">
-        <img src="${music.img}" alt="${music.title} cover" />
-        <div>
-          <div style="font-weight:600">${music.title}</div>
-          <div style="font-size:13px;color:#777">${music.duration}</div>
-        </div>
-      </div>
-      <div style="color:#777">${music.duration}</div>
-    `;
+            <div style="display:flex;align-items:center;gap:12px">
+                <img src="${music.img}" alt="${music.title} cover" />
+                <div>
+                    <div style="font-weight:600">${music.title}</div>
+                    <div style="font-size:13px;color:#777">${music.duration}</div>
+                </div>
+            </div>
+            <div style="color:#777">${music.duration}</div>
+        `;
+
         list.appendChild(li);
     });
 }
 
-/* ===== TABS: click handling ===== */
+/* ============================================
+   TAB BUTTONS HANDLING
+   ============================================ */
 document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+
+        // Update active state
         document.querySelectorAll('.tab-btn').forEach(b => {
             b.classList.remove('active');
             b.setAttribute('aria-selected', 'false');
         });
+
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
+
+        // Load selected data
         const tab = btn.getAttribute('data-tab');
         renderList(tab);
     });
 });
 
-/* DEFAULT */
+/* Default load */
 renderList('recommended');
 
-/* ===== NAV: mark active based on URL (works for index/poadcast static files) ===== */
+/* ============================================
+   NAV ACTIVE STATE BY URL
+   ============================================ */
 (function setNavActiveByPath() {
-    const tabs = document.querySelectorAll('.nav-left .nav-tab');
+    const navLinks = document.querySelectorAll('.nav-left .nav-tab');
     const path = location.pathname.split('/').pop() || 'index.html';
-    tabs.forEach(a => {
-        // normalize href filename
-        const href = a.getAttribute('href') || '';
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href') || '';
         const file = href.split('/').pop();
+
         if (file === path || (path === '' && file === 'index.html')) {
-            a.classList.add('active');
-            a.setAttribute('aria-current', 'page');
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
         } else {
-            a.classList.remove('active');
-            a.removeAttribute('aria-current');
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
         }
     });
 })();
 
-/* ===== HAMBURGER (toggle nav on small screens) ===== */
+/* ============================================
+   HAMBURGER MENU BEHAVIOR (MOBILE)
+   ============================================ */
 const hamburger = document.querySelector('.hamburger');
+
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         const navLeft = document.querySelector('.nav-left');
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', String(!expanded));
+        const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+
+        hamburger.setAttribute('aria-expanded', String(!isOpen));
         navLeft.classList.toggle('open');
     });
 }
 
-/* Optional: close nav when a nav link is clicked (mobile) */
+/* Close menu when clicking a nav link */
 document.querySelectorAll('.nav-left .nav-tab').forEach(link => {
     link.addEventListener('click', () => {
         const navLeft = document.querySelector('.nav-left');
-        if (navLeft.classList.contains('open')) navLeft.classList.remove('open');
+        if (navLeft.classList.contains('open')) {
+            navLeft.classList.remove('open');
+        }
     });
 });
