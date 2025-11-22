@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Music Player</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar" role="banner">
+        <div class="nav-left">
+            <!-- Navigation tabs -->
+            <a class="nav-tab" href="index.html">
+                <h2>Music</h2>
+            </a>
+            <a class="nav-tab" href="poadcast.html">
+                <h2>Poadcast</h2>
+            </a>
+        </div>
+
+        <!-- Search bar -->
+        <div class="nav-center" role="search">
+            <label class="visually-hidden" for="search">Search</label>
+            <input id="search" type="text" class="search" placeholder="Search music, artist, album..." />
+        </div>
+
+        <div class="nav-right">
+            <h3 class="username">Hello User</h3>
+            <button class="avatar" aria-label="Profile"></button>
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="banner" aria-label="Banner: Music for everyone">
+        <img src="images/Banner/Banner.jpg" alt="People enjoying music" class="banner-img" />
+        <div class="banner-overlay" aria-hidden="true"></div>
+
+        <div class="banner-content">
+            <h1>
+                Music<br />
+                <span class="muted">for everyone</span>
+            </h1>
+        </div>
+    </section>
+
+    <main class="content" role="main">
+        <!-- LEFT COLUMN: Recently Played -->
+        <aside class="left" aria-label="Recently played and recommended">
+            <h2>Recently played</h2>
+
+            <div class="recent-grid">
+                <div class="card">
+                    <img src="images/Synaesthesia.jpeg" alt="Synaesthesia cover" />
+                    <p>Synaesthesia</p>
+                    <span>Tonik Ensemble</span>
+                </div>
+                <div class="card">
+                    <img src="images/Small Memory.jpeg" alt="Small Memory cover" />
+                    <p>Small Memory</p>
+                    <span>Jon Hopkins</span>
+                </div>
+                <div class="card">
+                    <img src="images/F1.jpg" alt="F1 cover" />
+                    <p>F1</p>
+                    <span>Hans Zimmer</span>
+                </div>
+                <div class="card">
+                    <img src="images/Wanted 2 Say.jpeg" alt="Wanted 2 Say cover" />
+                    <p>Wanted 2 Say</p>
+                    <span>Samaris</span>
+                </div>
+            </div>
+
+            <h3>Recommended</h3>
+            <ul class="list compact">
+                <li><img src="images/Luminous Spaces.jpg" alt="" /> Luminous Spaces <span>4:40</span></li>
+                <li><img src="images/Immunity.jpeg" alt="" /> Immunity <span>9:56</span></li>
+                <li><img src="images/Small Memory.jpeg" alt="" /> Small Memory <span>3:32</span></li>
+                <li><img src="images/Synaesthesia.jpeg" alt="" /> Synaesthesia <span>4:56</span></li>
+                <li><img src="images/Wanted 2 Say.jpeg" alt="" /> Wanted 2 Say <span>2:43</span></li>
+                <li><img src="images/Cloud 9.jpeg" alt="" /> Cloud 9 <span>4:32</span></li>
+                <li><img src="images/Janji.jpeg" alt="" /> Janji <span>3:11</span></li>
+            </ul>
+        </aside>
+
+        <!-- RIGHT COLUMN: Music Tabs -->
+        <section class="right" aria-label="Music lists">
+            <div class="tabs" role="tablist" aria-label="Music categories">
+                <button class="tab-btn active" data-tab="recommended" role="tab" aria-selected="true">
+                    <h2>Recommended</h2>
+                </button>
+                <button class="tab-btn" data-tab="popular" role="tab">
+                    <h2>Popular</h2>
+                </button>
+                <button class="tab-btn" data-tab="new" role="tab">
+                    <h2>New</h2>
+                </button>
+            </div>
+
+            <ul class="list big" id="musicList" aria-live="polite"></ul>
+        </section>
+    </main>
+
+    <!-- PLAYER BOTTOM -->
+    <footer class="player" role="contentinfo">
+
+        <!-- Song info -->
+        <div class="player-left song-info">
+            <img src="images/F1.jpg" alt="Now playing cover" />
+            <div>
+                <p class="title">F1</p>
+                <span class="artist">Hans Zimmer</span>
+            </div>
+        </div>
+
+        <!-- Playback controls -->
+        <div class="player-center controls">
+            <button class="btn-plain" aria-label="Previous">
+                <img src="images/Player/back.png" alt="" />
+            </button>
+
+            <button id="playBtn" class="btn-play" aria-pressed="false" aria-label="Play">
+                <img src="images/Player/play.png" alt="" />
+            </button>
+
+            <button class="btn-plain" aria-label="Next">
+                <img src="images/Player/next.png" alt="" />
+            </button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="player-bottom">
+            <div class="progress-container">
+                <span class="time">0:00</span>
+                <input type="range" class="progress-bar" value="0" min="0" max="100" />
+                <span class="time">3:45</span>
+            </div>
+        </div>
+
+        <!-- Extras (repeat, volume, etc.) -->
+        <div class="player-right extras progress-wrap">
+            <div class="extras-controls">
+                <button class="btn-plain" aria-label="Repeat"><img src="images/Player/repeat.png" alt="" /></button>
+                <button class="btn-plain" aria-label="Shuffle"><img src="images/Player/shuffle.png" alt="" /></button>
+                <button class="btn-plain" aria-label="Sound"><img src="images/Player/Sound.png" alt="" /></button>
+                <input class="volume" type="range" min="0" max="100" value="60" aria-label="Volume" />
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

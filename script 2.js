@@ -1,0 +1,137 @@
+/* ===========
+   Basic interactions: play/pause, tabs, render list, nav active
+   =========== */
+
+const playBtn = document.getElementById('playBtn');
+let isPlaying = false;
+
+if (playBtn) {
+    playBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        const img = playBtn.querySelector('img');
+        playBtn.setAttribute('aria-pressed', String(isPlaying));
+        if (img) img.src = isPlaying ? 'images/Player/pause.png' : 'images/Player/play.png';
+    });
+}
+
+/* ===== DATA LAGU ===== */
+const musicData = {
+    recommended: [
+        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40" },
+        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56" },
+        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32" },
+        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56" },
+        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43" },
+        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32" },
+        { img: "images/Janji.jpeg", title: "Janji", duration: "3:11" },
+        { img: "images/F1.jpg", title: "F1", duration: "2:43" },
+        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21" },
+        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33" },
+        { img: "images/We Are.png", title: "We Are", duration: "2:36" },
+        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50" }
+    ],
+    popular: [
+        { img: "images/We Are.png", title: "We Are", duration: "2:36" },
+        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56" },
+        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40" },
+        { img: "images/F1.jpg", title: "F1", duration: "2:43" },
+        { img: "images/WhoA.jpeg", title: "Whoa", duration: "2:33" },
+        { img: "images/Janji.jpeg", title: "Janji", duration: "3:11" },
+        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32" },
+        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43" },
+        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50" },
+        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21" },
+        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32" },
+        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56" }
+    ],
+    new: [
+        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32" },
+        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56" },
+        { img: "images/Janji.jpeg", title: "Janji", duration: "3:11" },
+        { img: "images/We Are.png", title: "We Are", duration: "2:36" },
+        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43" },
+        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56" },
+        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50" },
+        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32" },
+        { img: "images/F1.jpg", title: "F1", duration: "2:43" },
+        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33" },
+        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21" },
+        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40" }
+    ]
+};
+
+/* ===== RENDER LIST ===== */
+function renderList(type) {
+    const list = document.getElementById('musicList');
+    if (!list) return;
+    list.innerHTML = '';
+    const arr = musicData[type] || [];
+    arr.forEach(music => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="${music.img}" alt="${music.title} cover" />
+        <div>
+          <div style="font-weight:600">${music.title}</div>
+          <div style="font-size:13px;color:#777">${music.duration}</div>
+        </div>
+      </div>
+      <div style="color:#777">${music.duration}</div>
+    `;
+        list.appendChild(li);
+    });
+}
+
+/* ===== TABS: click handling ===== */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const tab = btn.getAttribute('data-tab');
+        renderList(tab);
+    });
+});
+
+/* DEFAULT */
+renderList('recommended');
+
+/* ===== NAV: mark active based on URL (works for index/poadcast static files) ===== */
+(function setNavActiveByPath() {
+    const tabs = document.querySelectorAll('.nav-left .nav-tab');
+    const path = location.pathname.split('/').pop() || 'index.html';
+    tabs.forEach(a => {
+        // normalize href filename
+        const href = a.getAttribute('href') || '';
+        const file = href.split('/').pop();
+        if (file === path || (path === '' && file === 'index.html')) {
+            a.classList.add('active');
+            a.setAttribute('aria-current', 'page');
+        } else {
+            a.classList.remove('active');
+            a.removeAttribute('aria-current');
+        }
+    });
+})();
+
+/* ===== HAMBURGER (toggle nav on small screens) ===== */
+const hamburger = document.querySelector('.hamburger');
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        const navLeft = document.querySelector('.nav-left');
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!expanded));
+        navLeft.classList.toggle('open');
+    });
+}
+
+/* Optional: close nav when a nav link is clicked (mobile) */
+document.querySelectorAll('.nav-left .nav-tab').forEach(link => {
+    link.addEventListener('click', () => {
+        const navLeft = document.querySelector('.nav-left');
+        if (navLeft.classList.contains('open')) navLeft.classList.remove('open');
+    });
+});
