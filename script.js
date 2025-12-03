@@ -83,22 +83,30 @@ function renderList(type) {
     const items = musicData[type] || [];
 
     items.forEach(music => {
+
         const li = document.createElement('li');
 
         li.innerHTML = `
-            <div style="display:flex;align-items:center;gap:12px">
-                <img src="${music.img}" alt="${music.title} cover" />
-                <div>
-                    <div style="font-weight:600">${music.title}</div>
-                    <div style="font-size:13px;color:#777">${music.artist}</div>
+            <a href="play.html?title=${encodeURIComponent(music.title)}&artist=${encodeURIComponent(music.artist)}&img=${encodeURIComponent(music.img)}&duration=${encodeURIComponent(music.duration)}"
+               style="display:flex;justify-content:space-between;align-items:center;width:100%;text-decoration:none;color:inherit;padding:10px 0">
+
+                <div style="display:flex;align-items:center;gap:12px">
+                    <img src="${music.img}" alt="${music.title} cover" />
+                    <div>
+                        <div style="font-weight:600">${music.title}</div>
+                        <div style="font-size:13px;color:#777">${music.artist}</div>
+                    </div>
                 </div>
-            </div>
-            <div style="color:#777">${music.duration}</div>
+
+                <div style="color:#777">${music.duration}</div>
+
+            </a>
         `;
 
         list.appendChild(li);
     });
 }
+
 
 /* ============================================
    TAB BUTTONS HANDLING
@@ -145,27 +153,11 @@ renderList('recommended');
     });
 })();
 
-/* ============================================
-   HAMBURGER MENU BEHAVIOR (MOBILE)
-   ============================================ */
-const hamburger = document.querySelector('.hamburger');
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        const navLeft = document.querySelector('.nav-left');
-        const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
 
-        hamburger.setAttribute('aria-expanded', String(!isOpen));
-        navLeft.classList.toggle('open');
-    });
-}
-
-/* Close menu when clicking a nav link */
-document.querySelectorAll('.nav-left .nav-tab').forEach(link => {
-    link.addEventListener('click', () => {
-        const navLeft = document.querySelector('.nav-left');
-        if (navLeft.classList.contains('open')) {
-            navLeft.classList.remove('open');
-        }
-    });
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("show");
 });

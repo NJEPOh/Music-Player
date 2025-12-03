@@ -17,26 +17,42 @@
 <body>
     <!-- NAVBAR -->
     <header class="navbar" role="banner">
-        <div class="nav-left">
-            <!-- Navigation tabs -->
-            <a class="nav-tab" href="index.html">
-                <h2>Music</h2>
-            </a>
-            <a class="nav-tab" href="poadcast.html">
-                <h2>Poadcast</h2>
-            </a>
-        </div>
 
-        <!-- Search bar -->
+        <!-- LEFT: NAV LINKS -->
+        <nav class="nav-left" aria-label="Main Navigation">
+            <a class="nav-tab" href="index.html">Home</a>
+            <a class="nav-tab" href="music.html">Music</a>
+            <a class="nav-tab" href="podcast.html">Podcast</a>
+        </nav>
+
+        <!-- CENTER: SEARCH -->
         <div class="nav-center" role="search">
             <label class="visually-hidden" for="search">Search</label>
-            <input id="search" type="text" class="search" placeholder="Search poadcast" />
+            <input id="search" type="text" class="search" placeholder="Search music, artist, album..." />
         </div>
 
+        <!-- RIGHT: USER -->
         <div class="nav-right">
             <h3 class="username">Hello User</h3>
             <button class="avatar" aria-label="Profile"></button>
         </div>
+
+        <!-- HAMBURGER MENU (RESPONSIVE) -->
+        <button class="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- MOBILE MENU -->
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="podcast.html">Podcast</a>
+
+            <input type="text" class="search" placeholder="Search..." />
+        </nav>
+
     </header>
 
     <!-- BANNER -->
@@ -46,7 +62,7 @@
 
         <div class="banner-content">
             <h1>
-                Poadcast<br />
+                Podcast<br />
                 <span class="muted">for everyone</span>
             </h1>
         </div>
@@ -58,37 +74,54 @@
             <h2>Recently played</h2>
 
             <div class="recent-grid">
-                <div class="card">
+                <a href="play.html" class="card">
                     <img src="images/Synaesthesia.jpeg" alt="Synaesthesia cover" />
                     <p>Synaesthesia</p>
                     <span>Tonik Ensemble</span>
-                </div>
-                <div class="card">
+                </a>
+
+                <a href="play.html" class="card">
                     <img src="images/Small Memory.jpeg" alt="Small Memory cover" />
                     <p>Small Memory</p>
                     <span>Jon Hopkins</span>
-                </div>
-                <div class="card">
+                </a>
+
+                <a href="play.html" class="card">
                     <img src="images/F1.jpg" alt="F1 cover" />
                     <p>F1</p>
                     <span>Hans Zimmer</span>
-                </div>
-                <div class="card">
+                </a>
+
+                <a href="play.html" class="card">
                     <img src="images/Wanted 2 Say.jpeg" alt="Wanted 2 Say cover" />
                     <p>Wanted 2 Say</p>
                     <span>Samaris</span>
-                </div>
+                </a>
             </div>
 
             <h3>Recommended</h3>
             <ul class="list compact">
-                <li><img src="images/Luminous Spaces.jpg" alt="" /> Luminous Spaces <span>4:40</span></li>
-                <li><img src="images/Immunity.jpeg" alt="" /> Immunity <span>9:56</span></li>
-                <li><img src="images/Small Memory.jpeg" alt="" /> Small Memory <span>3:32</span></li>
-                <li><img src="images/Synaesthesia.jpeg" alt="" /> Synaesthesia <span>4:56</span></li>
-                <li><img src="images/Wanted 2 Say.jpeg" alt="" /> Wanted 2 Say <span>2:43</span></li>
-                <li><img src="images/Cloud 9.jpeg" alt="" /> Cloud 9 <span>4:32</span></li>
-                <li><img src="images/Janji.jpeg" alt="" /> Janji <span>3:11</span></li>
+                <a href="play.html">
+                    <li><img src="images/Luminous Spaces.jpg" alt="" /> Luminous Spaces <span>4:40</span></li>
+                </a>
+                <a href="play.html">
+                    <li><img src="images/Immunity.jpeg" alt="" /> Immunity <span>9:56</span></li>
+                </a>
+                <a href="play.html">
+                    <li><img src="images/Small Memory.jpeg" alt="" /> Small Memory <span>3:32</span></li>
+                </a>
+                <a href="play.html">
+                    <li><img src="images/Synaesthesia.jpeg" alt="" /> Synaesthesia <span>4:56</span></li>
+                </a>
+                <a href="play.html">
+                    <li><img src="images/Wanted 2 Say.jpeg" alt="" /> Wanted 2 Say <span>2:43</span></li>
+                </a>
+                <a href="play.html">
+                    <li><img src="images/Cloud 9.jpeg" alt="" /> Cloud 9 <span>4:32</span></li>
+                </a>
+                <a href="play.html">
+                    <li><img src="images/Janji.jpeg" alt="" /> Janji <span>3:11</span></li>
+                </a>
             </ul>
         </aside>
 
@@ -157,7 +190,7 @@
         </div>
     </footer>
 
-    <!-- !-- WEBSITE FOOTER --> 
+    <!-- !-- WEBSITE FOOTER -->
     <footer class="site-footer">
         <div class="footer-container">
 

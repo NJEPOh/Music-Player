@@ -25,48 +25,48 @@ if (playBtn) {
    ============================================ */
 const musicData = {
     recommended: [
-        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40" },
-        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56" },
-        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32" },
-        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56" },
-        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43" },
-        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32" },
-        { img: "images/Janji.jpeg", title: "Janji", duration: "3:11" },
-        { img: "images/F1.jpg", title: "F1", duration: "2:43" },
-        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21" },
-        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33" },
-        { img: "images/We Are.png", title: "We Are", duration: "2:36" },
-        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50" }
+        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40", artist: "Jon Hopkins" },
+        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56", artist: "Clairo" },
+        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32", artist: "Jon Hopkins" },
+        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56", artist: "Bethel" },
+        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43", artist: "KAMASABI" },
+        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32", artist: "Itro & Tobu" },
+        { img: "images/Janji.jpeg", title: "Heroes Tonight", duration: "3:11", artist: "Janji" },
+        { img: "images/F1.jpg", title: "F1", duration: "2:43", artist: "Hans Zimmer" },
+        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21", artist: "Kana Boon" },
+        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33", artist: "XXXtentacion" },
+        { img: "images/We Are.png", title: "We Are", duration: "2:36", artist: "One Ok Rock" },
+        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50", artist: "Casey Edwards" }
     ],
 
     popular: [
-        { img: "images/We Are.png", title: "We Are", duration: "2:36" },
-        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56" },
-        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40" },
-        { img: "images/F1.jpg", title: "F1", duration: "2:43" },
-        { img: "images/WhoA.jpeg", title: "Whoa", duration: "2:33" },
-        { img: "images/Janji.jpeg", title: "Janji", duration: "3:11" },
-        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32" },
-        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43" },
-        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50" },
-        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21" },
-        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32" },
-        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56" }
+        { img: "images/We Are.png", title: "We Are", duration: "2:36", artist: "One Ok Rock" },
+        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56", artist: "Bethel" },
+        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40", artist: "Jon Hopkins" },
+        { img: "images/F1.jpg", title: "F1", duration: "2:43", artist: "Hans Zimmer" },
+        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33", artist: "XXXtentacion" },
+        { img: "images/Janji.jpeg", title: "Heroes Tonight", duration: "3:11", artist: "Janji" },
+        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32", artist: "Itro & Tobu" },
+        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43", artist: "KAMASABI" },
+        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50", artist: "Casey Edwards" },
+        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21", artist: "Kana Boon" },
+        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32", artist: "Jon Hopkins" },
+        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56", artist: "Clairo" }
     ],
 
     new: [
-        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32" },
-        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56" },
-        { img: "images/Janji.jpeg", title: "Janji", duration: "3:11" },
-        { img: "images/We Are.png", title: "We Are", duration: "2:36" },
-        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43" },
-        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56" },
-        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50" },
-        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32" },
-        { img: "images/F1.jpg", title: "F1", duration: "2:43" },
-        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33" },
-        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21" },
-        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40" }
+        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32", artist: "Itro & Tobu" },
+        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56", artist: "Clairo" },
+        { img: "images/Janji.jpeg", title: "Heroes Tonight", duration: "3:11", artist: "Janji" },
+        { img: "images/We Are.png", title: "We Are", duration: "2:36", artist: "One Ok Rock" },
+        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43", artist: "KAMASABI" },
+        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56", artist: "Bethel" },
+        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50", artist: "Casey Edwards" },
+        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32", artist: "Jon Hopkins" },
+        { img: "images/F1.jpg", title: "F1", duration: "2:43", artist: "Hans Zimmer" },
+        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33", artist: "XXXtentacion" },
+        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21", artist: "Kana Boon" },
+        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40", artist: "Jon Hopkins" }
     ]
 };
 
@@ -83,22 +83,30 @@ function renderList(type) {
     const items = musicData[type] || [];
 
     items.forEach(music => {
+
         const li = document.createElement('li');
 
         li.innerHTML = `
-            <div style="display:flex;align-items:center;gap:12px">
-                <img src="${music.img}" alt="${music.title} cover" />
-                <div>
-                    <div style="font-weight:600">${music.title}</div>
-                    <div style="font-size:13px;color:#777">${music.duration}</div>
+            <a href="play.html?title=${encodeURIComponent(music.title)}&artist=${encodeURIComponent(music.artist)}&img=${encodeURIComponent(music.img)}&duration=${encodeURIComponent(music.duration)}"
+               style="display:flex;justify-content:space-between;align-items:center;width:100%;text-decoration:none;color:inherit;padding:10px 0">
+
+                <div style="display:flex;align-items:center;gap:12px">
+                    <img src="${music.img}" alt="${music.title} cover" />
+                    <div>
+                        <div style="font-weight:600">${music.title}</div>
+                        <div style="font-size:13px;color:#777">${music.artist}</div>
+                    </div>
                 </div>
-            </div>
-            <div style="color:#777">${music.duration}</div>
+
+                <div style="color:#777">${music.duration}</div>
+
+            </a>
         `;
 
         list.appendChild(li);
     });
 }
+
 
 /* ============================================
    TAB BUTTONS HANDLING
@@ -145,27 +153,11 @@ renderList('recommended');
     });
 })();
 
-/* ============================================
-   HAMBURGER MENU BEHAVIOR (MOBILE)
-   ============================================ */
-const hamburger = document.querySelector('.hamburger');
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        const navLeft = document.querySelector('.nav-left');
-        const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
 
-        hamburger.setAttribute('aria-expanded', String(!isOpen));
-        navLeft.classList.toggle('open');
-    });
-}
-
-/* Close menu when clicking a nav link */
-document.querySelectorAll('.nav-left .nav-tab').forEach(link => {
-    link.addEventListener('click', () => {
-        const navLeft = document.querySelector('.nav-left');
-        if (navLeft.classList.contains('open')) {
-            navLeft.classList.remove('open');
-        }
-    });
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("show");
 });

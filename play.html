@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Playing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" role="banner">
+
+        <!-- LEFT: NAV LINKS -->
+        <nav class="nav-left" aria-label="Main Navigation">
+            <a class="nav-tab" href="index.html">Home</a>
+            <a class="nav-tab" href="music.html">Music</a>
+            <a class="nav-tab" href="podcast.html">Podcast</a>
+        </nav>
+
+        <!-- CENTER: SEARCH -->
+        <div class="nav-center" role="search">
+            <label class="visually-hidden" for="search">Search</label>
+            <input id="search" type="text" class="search" placeholder="Search music, artist, album..." />
+        </div>
+
+        <!-- RIGHT: USER -->
+        <div class="nav-right">
+            <h3 class="username">Hello User</h3>
+            <button class="avatar" aria-label="Profile"></button>
+        </div>
+
+        <!-- HAMBURGER MENU (RESPONSIVE) -->
+        <button class="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- MOBILE MENU -->
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="podcast.html">Podcast</a>
+
+            <input type="text" class="search" placeholder="Search..." />
+        </nav>
+
+    </header>
+
+    <section class="now-playing">
+        <div class="np-wrapper">
+            <!-- Cover -->
+            <img src="images/F1.jpg" class="np-cover" alt="Cover">
+
+            <!-- Title -->
+            <h2 class="np-title">F1</h2>
+            <h2 class="np-artist">Hans Zimmer</h2>
+        </div>
+    </section>
+
+    <!-- RIGHT COLUMN: Music Tabs -->
+    <section class="right" aria-label="Music lists">
+        <div class="tabs" role="tablist" aria-label="Music categories">
+            <button class="tab-btn active" data-tab="recommended" role="tab" aria-selected="true">
+                <h2>Recommended</h2>
+            </button>
+            <button class="tab-btn" data-tab="popular" role="tab">
+                <h2>Popular</h2>
+            </button>
+            <button class="tab-btn" data-tab="new" role="tab">
+                <h2>New</h2>
+            </button>
+        </div>
+
+        <ul class="list big" id="musicList" aria-live="polite"></ul>
+    </section>
+
+    <!-- PLAYER BOTTOM -->
+    <footer class="player" role="contentinfo">
+
+        <!-- Playback controls -->
+        <div class="player-center controls">
+            <button class="btn-plain" aria-label="Previous">
+                <img src="images/Player/back.png" alt="" />
+            </button>
+
+            <button id="playBtn" class="btn-play" aria-pressed="false" aria-label="Play">
+                <img src="images/Player/play.png" alt="" />
+            </button>
+
+            <button class="btn-plain" aria-label="Next">
+                <img src="images/Player/next.png" alt="" />
+            </button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="player-bottom">
+            <div class="progress-container">
+                <span class="time">0:00</span>
+                <input type="range" class="progress-bar" value="0" min="0" max="100" />
+                <span class="time">3:45</span>
+            </div>
+        </div>
+
+        <!-- Extras (repeat, volume, etc.) -->
+        <div class="player-right extras progress-wrap">
+            <div class="extras-controls">
+                <button class="btn-plain" aria-label="Repeat"><img src="images/Player/repeat.png" alt="" /></button>
+                <button class="btn-plain" aria-label="Shuffle"><img src="images/Player/shuffle.png" alt="" /></button>
+                <button class="btn-plain" aria-label="Sound"><img src="images/Player/Sound.png" alt="" /></button>
+                <input class="volume" type="range" min="0" max="100" value="60" aria-label="Volume" />
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
