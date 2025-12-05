@@ -25,50 +25,51 @@ if (playBtn) {
    ============================================ */
 const musicData = {
     recommended: [
-        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40", artist: "Jon Hopkins" },
-        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56", artist: "Clairo" },
-        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32", artist: "Jon Hopkins" },
-        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56", artist: "Bethel" },
-        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43", artist: "KAMASABI" },
-        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32", artist: "Itro & Tobu" },
-        { img: "images/Janji.jpeg", title: "Heroes Tonight", duration: "3:11", artist: "Janji" },
-        { img: "images/F1.jpg", title: "F1", duration: "2:43", artist: "Hans Zimmer" },
-        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21", artist: "Kana Boon" },
-        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33", artist: "XXXtentacion" },
-        { img: "images/We Are.png", title: "We Are", duration: "2:36", artist: "One Ok Rock" },
-        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50", artist: "Casey Edwards" }
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Politik Hari Ini", duration: "32:10", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Humor Receh Nasional", duration: "45:22", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Kisah Paling Absurd", duration: "28:54", artist: "Denny Sumargo" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Bedah Isu Viral", duration: "41:02", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Ngobrol Random", duration: "36:11", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Cerita Cinta Rumit", duration: "50:34", artist: "Denny Sumargo" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Ekonomi Rakyat", duration: "47:18", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Kisah Mistis", duration: "29:21", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Bintang Tamu Spesial", duration: "59:10", artist: "Denny Sumargo" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Catatan Demokrasi", duration: "33:40", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Nostalgia 2000an", duration: "26:48", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Curhatan Paling Gokil", duration: "43:12", artist: "Denny Sumargo" }
     ],
 
     popular: [
-        { img: "images/We Are.png", title: "We Are", duration: "2:36", artist: "One Ok Rock" },
-        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56", artist: "Bethel" },
-        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40", artist: "Jon Hopkins" },
-        { img: "images/F1.jpg", title: "F1", duration: "2:43", artist: "Hans Zimmer" },
-        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33", artist: "XXXtentacion" },
-        { img: "images/Janji.jpeg", title: "Heroes Tonight", duration: "3:11", artist: "Janji" },
-        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32", artist: "Itro & Tobu" },
-        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43", artist: "KAMASABI" },
-        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50", artist: "Casey Edwards" },
-        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21", artist: "Kana Boon" },
-        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32", artist: "Jon Hopkins" },
-        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56", artist: "Clairo" }
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Catatan Demokrasi", duration: "33:40", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Kisah Mistis", duration: "29:21", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Politik Hari Ini", duration: "32:10", artist: "Najwa Shihab" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Bintang Tamu Spesial", duration: "59:10", artist: "Denny Sumargo" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Humor Receh Nasional", duration: "45:22", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Ekonomi Rakyat", duration: "47:18", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Ngobrol Random", duration: "36:11", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Kisah Paling Absurd", duration: "28:54", artist: "Denny Sumargo" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Cerita Cinta Rumit", duration: "50:34", artist: "Denny Sumargo" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Bedah Isu Viral", duration: "41:02", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Nostalgia 2000an", duration: "26:48", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Catatan Isu Publik", duration: "38:20", artist: "Najwa Shihab" }
     ],
 
     new: [
-        { img: "images/Cloud 9.jpeg", title: "Cloud 9", duration: "4:32", artist: "Itro & Tobu" },
-        { img: "images/Immunity.jpeg", title: "Immunity", duration: "9:56", artist: "Clairo" },
-        { img: "images/Janji.jpeg", title: "Heroes Tonight", duration: "3:11", artist: "Janji" },
-        { img: "images/We Are.png", title: "We Are", duration: "2:36", artist: "One Ok Rock" },
-        { img: "images/Wanted 2 Say.jpeg", title: "Wanted 2 Say", duration: "2:43", artist: "KAMASABI" },
-        { img: "images/Synaesthesia.jpeg", title: "Synaesthesia", duration: "4:56", artist: "Bethel" },
-        { img: "images/Devil Trigger.jpeg", title: "Devil Trigger", duration: "5:50", artist: "Casey Edwards" },
-        { img: "images/Small Memory.jpeg", title: "Small Memory", duration: "3:32", artist: "Jon Hopkins" },
-        { img: "images/F1.jpg", title: "F1", duration: "2:43", artist: "Hans Zimmer" },
-        { img: "images/Whoa.jpeg", title: "Whoa", duration: "2:33", artist: "XXXtentacion" },
-        { img: "images/Silhouette.png", title: "Silhouette", duration: "4:21", artist: "Kana Boon" },
-        { img: "images/Luminous Spaces.jpg", title: "Luminous Spaces", duration: "4:40", artist: "Jon Hopkins" }
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Ngobrol Random", duration: "36:11", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Bedah Isu Viral", duration: "41:02", artist: "Najwa Shihab" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Kisah Paling Absurd", duration: "28:54", artist: "Denny Sumargo" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Politik Hari Ini", duration: "32:10", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Humor Receh Nasional", duration: "45:22", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Ekonomi Rakyat", duration: "47:18", artist: "Najwa Shihab" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Cerita Cinta Rumit", duration: "50:34", artist: "Denny Sumargo" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Nostalgia 2000an", duration: "26:48", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Bintang Tamu Spesial", duration: "59:10", artist: "Denny Sumargo" },
+        { img: "images/Podcast/MataNajwa.png", title: "Mata Najwa: Catatan Demokrasi", duration: "33:40", artist: "Najwa Shihab" },
+        { img: "images/Podcast/AgakLaen.jpg", title: "Agak Laen: Kisah Mistis", duration: "29:21", artist: "Tim Agak Laen" },
+        { img: "images/Podcast/DennySumargo.jpg", title: "CURHAT BANG: Curhatan Paling Gokil", duration: "43:12", artist: "Denny Sumargo" }
     ]
 };
+
 
 /* ============================================
    RENDER LIST
